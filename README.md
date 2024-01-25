@@ -7,9 +7,22 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Branch Details
-### Main branch will have the latest and final code of working application.
+### Main branch will have the latest and final code of the working application.
 
-In case you want to try step by step, refer the branch specific details below
+In case you want to try step by step, refer to the branch specific details below
 - Main branch link https://github.com/learnsmartcoding/e-commerce-smartcarthub-webapp
-- Branch name "plain_angular16_template_codebase" is based on Angular 16 project. Just template code to start application. https://github.com/learnsmartcoding/e-commerce-smartcarthub-webapp/tree/feature/plain_angular16_template_codebase
+- Branch name "plain_angular16_template_codebase" is based on the Angular 16 project. Just template code to start the application. https://github.com/learnsmartcoding/e-commerce-smartcarthub-webapp/tree/feature/plain_angular16_template_codebase
 - Branch name "only_azure_adb2c_configuration_branch" will be Angular 16 template + Azure AD B2C related configuration. https://github.com/learnsmartcoding/e-commerce-smartcarthub-webapp/tree/feature/only_azure_adb2c_configuration_branch
+
+# Web Development Series | Project Branches
+
+## Feature Branch: ap1_InitialSetup
+Title: E-Commerce Angular Developer Series | Setting Up Your Angular Environment | EP1
+This branch corresponds to the video series Episode 1 (EP1) of our project. 
+
+### Video Link
+[Watch EP1 on YouTube](https://youtu.be/tBvXGwxw7Jw?si=W7E2D8_eJ91AEEXP)
+
+In this episode, we cover the initial project setup. Follow the steps outlined in the video to get started with the project.
+
+Feel free to check out the code changes and updates in this branch that accompany the tutorial.
