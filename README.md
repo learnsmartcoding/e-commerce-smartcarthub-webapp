@@ -38,11 +38,11 @@ In this episode, we cover the following concepts.
 - Interface declaration
 - Sample data for category, products
 - Data Bindings
- -- One way Binding
- -- Property Binding
- -- Event Binding
+    - One way Binding
+    - Property Binding
+    - Event Binding
 - Angular Structural  Directives
- -- *ngIf
- -- *ngFor
+    - *ngIf
+    - *ngFor
 
  We created components and handled dynamic data for product category, product list
