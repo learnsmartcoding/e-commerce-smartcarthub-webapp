@@ -1,14 +1,13 @@
 <div class="hero__categories">
-    <div class="hero__categories__all">
-        <i class="fa fa-bars"></i>
-        <span [innerHTML]="title"></span>
+    <div class="hero__categories__all" (click)="toggleCategories()">
+      <i class="fa fa-bars"></i>
+      <span>All departments</span>
     </div>
-    <ul>
-        <li *ngFor="let c of categories"><a href="#">{{c.categoryName}}</a></li>
+    <ul *ngIf="categories" [@toggleCategories]="isCategoriesOpen ? 'open' : 'closed'">
+      <li *ngFor="let category of categories"><a href="#">{{category.categoryName}}</a></li>
     </ul>
-</div>
-
-<!-- 
+  </div>
+  <!-- 
 Angular structural directives.
 as it chanegs the struture of the DOM - document object model
 

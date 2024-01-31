@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -13,6 +13,7 @@ import { FeaturedSectionComponent } from './components/featured-section/featured
 import { BannerComponent } from './components/banner/banner.component';
 import { LatestProductsComponent } from './components/latest-products/latest-products.component';
 import { ProductCategoryComponent } from './product/product-category/product-category.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { ProductCategoryComponent } from './product/product-category/product-cat
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

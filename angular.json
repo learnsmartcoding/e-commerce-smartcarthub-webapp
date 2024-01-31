@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "lsc-smartcarthub-webapp": {
+    "smartcarthub": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/lsc-smartcarthub-webapp",
+            "outputPath": "dist/smartcarthub",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -42,11 +42,6 @@
                   "maximumWarning": "2kb",
                   "maximumError": "4kb"
                 }
-              ],"fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.production.ts"
-                }
               ],
               "outputHashing": "all"
             },
@@ -56,13 +51,7 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.development.ts"
-                }
-              ]
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
@@ -71,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "lsc-smartcarthub-webapp:build:production"
+              "browserTarget": "smartcarthub:build:production"
             },
             "development": {
-              "browserTarget": "lsc-smartcarthub-webapp:build:development"
+              "browserTarget": "smartcarthub:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "lsc-smartcarthub-webapp:build"
+            "browserTarget": "smartcarthub:build"
           }
         },
         "test": {

@@ -1,4 +1,3 @@
-<!-- Featured Section Begin -->
 <section class="featured spad">
     <div class="container">
         <div class="row">
@@ -8,17 +7,23 @@
                 </div>
                 <div class="featured__controls">
                     <ul>
-                        <li class="active" data-filter="*" (click)="filterByCategory(-1)">All</li>
-                        <li *ngFor="let c of categories" (click)="filterByCategory(c.categoryId)">{{c.categoryName}}</li>
+                        <li class="active" [attr.data-filter]="'*'" (click)="filterByCategory(-1)">All</li>
+                        <li *ngFor="let c of categories" [attr.data-filter]="'.' + getCategoryCssClass(c.categoryId)"
+                            (click)="filterByCategory(c.categoryId)">
+                            {{c.categoryName}}
+                        </li>
                     </ul>
+
                 </div>
             </div>
         </div>
-        <div class="row featured__filter">
+        <div class="row featured__filter" style="min-height: 800px;">
             <div *ngIf="!products.length">
                 <h3>No products for the selected category</h3>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat"  *ngFor="let product of products">                
+            <div class="col-lg-3 col-md-4 col-sm-6 mix {{getCategoryCssClass(product.categoryId)}}"
+             *ngFor="let product of products">
+                
                 <div class="featured__item">
                     <div class="featured__item__pic set-bg"
                         [style.background-image]="'url(' + product.productImages[0].imageUrl + ')'">
@@ -38,4 +43,3 @@
         </div>
     </div>
 </section>
-<!-- Featured Section End -->
