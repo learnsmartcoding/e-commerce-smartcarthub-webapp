@@ -1,0 +1,15 @@
+<div class="hero__categories">
+    <div class="hero__categories__all">
+        <i class="fa fa-bars"></i>
+        <span [innerHTML]="title"></span>
+    </div>
+    <ul>
+        <li *ngFor="let c of categories"><a href="#">{{c.categoryName}}</a></li>
+    </ul>
+</div>
+
+<!-- 
+Angular structural directives.
+as it chanegs the struture of the DOM - document object model
+
+ -->
