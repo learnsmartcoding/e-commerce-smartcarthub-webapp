@@ -21,15 +21,18 @@ Title: E-Commerce Angular Developer Series | Setting Up Your Angular Environment
 This branch corresponds to the video series Episode 1 (EP1) of our project. 
 
 ### Video Link
-[Watch EP1 on YouTube](https://youtu.be/tBvXGwxw7Jw?si=W7E2D8_eJ91AEEXP)
+[Watch EP1 on YouTube](https://youtu.be/tBvXGwxw7Jw)
 
 In this episode, we cover the initial project setup. Follow the steps outlined in the video to get started with the project.
 
 Feel free to check out the code changes and updates in this branch that accompany the tutorial.
 
+## Feature Branch: ap1_databindings
+Title: E-Commerce Angular Developer Series | Data Bindings | Angular Directives | EP2 | Angular 16
+This branch corresponds to the video series Episode 2 (EP2) of our project. 
 
 ### Video Link
-[Watch EP2 on YouTube](https://youtu.be/tBvXGwxw7Jw?si=W7E2D8_eJ91AEEXP)
+[Watch EP2 on YouTube](https://youtu.be/yZKIjFHYLzY)
 
 In this episode, we cover the following concepts.
 - Interface declaration
