@@ -26,3 +26,20 @@ This branch corresponds to the video series Episode 1 (EP1) of our project.
 In this episode, we cover the initial project setup. Follow the steps outlined in the video to get started with the project.
 
 Feel free to check out the code changes and updates in this branch that accompany the tutorial.
+
+
+### Video Link
+[Watch EP2 on YouTube](https://youtu.be/tBvXGwxw7Jw?si=W7E2D8_eJ91AEEXP)
+
+In this episode, we cover the following concepts.
+- Interface declaration
+- Sample data for category, products
+- Data Bindings
+ -- One way Binding
+ -- Property Binding
+ -- Event Binding
+- Angular Structural  Directives
+ -- *ngIf
+ -- *ngFor
+
+ We created components and handled dynamic data for product category, product list

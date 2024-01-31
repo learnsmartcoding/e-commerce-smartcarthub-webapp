@@ -1,5 +1,5 @@
 {
-  "name": "lsc-smartcarthub-webapp",
+  "name": "smartcarthub",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
