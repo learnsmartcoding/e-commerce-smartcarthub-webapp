@@ -53,3 +53,9 @@ This branch corresponds to the video series Episode 3 (EP3) of our project.
 
 NgModule details explained in Readme file and it is placed here
  - src/concepts-explained/readme.md
+
+## Feature Branch: feature/ep4_ngmodules_and_routings 
+Title: E-Commerce Angular Dev Series | NgModules, Routing, Lazy Loading | EP4 | Angular 16
+This branch corresponds to the video series Episode 4 (EP4) of our project. 
+
+In this video/branch we cover routing, lazy loading and interview tips and Q&A. We will improve our application by separating our app into smaller feature modules and add navigation to it.

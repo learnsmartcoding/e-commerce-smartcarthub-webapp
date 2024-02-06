@@ -5,9 +5,13 @@
 
 <app-humberger></app-humberger>
 <app-header></app-header>
-<app-hero></app-hero>
-<app-featured-section></app-featured-section>
-<!-- <app-banner></app-banner>
-<app-latest-products></app-latest-products>
-<app-blog-section></app-blog-section> -->
+<!-- the top section is common and bottom footer is common -->
+
+<section class="hero">
+  <div class="container">
+    <!-- this is the place where our templates are replaced dynamically when routing/navigation occurs -->
+    <router-outlet></router-outlet>
+  </div>
+</section>
+
 <app-footer></app-footer>
