@@ -46,18 +46,19 @@
             <div class="col-lg-6">
                 <nav class="header__menu">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
-                        <li><a href="./shop-grid.html">Shop</a></li>
+                        <li class="active"><a [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a></li>
+                        <li><a [routerLink]="['/product/shop']" routerLinkActive="router-link-active" >Shop</a></li>
                         <li><a href="#">Pages</a>
                             <ul class="header__menu__dropdown">
-                                <li><a href="./shop-details.html">Shop Details</a></li>
-                                <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                <li><a href="./checkout.html">Check Out</a></li>
-                                <li><a href="./blog-details.html">Blog Details</a></li>
+                                 <!-- <li><a [routerLink]="['/product/details/2']" routerLinkActive="router-link-active" >Shop Details</a></li> -->
+                                 <li><a  [routerLink]="['/shopping/cart']" routerLinkActive="router-link-active" >Shoping Cart</a></li>
+                                 <li><a [routerLink]="['/shopping/wishlist']" routerLinkActive="router-link-active" >Wishlist</a></li>
+                                 <li><a [routerLink]="['/shopping/checkout']" routerLinkActive="router-link-active" >Checkout</a></li>
+                                 <!-- <li><a href="./blog-details.html">Blog Details</a></li> -->
                             </ul>
                         </li>
-                        <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
+                        <!-- <li><a href="./blog.html">Blog</a></li> -->
+                        <li><a [routerLink]="['/contact']" routerLinkActive="router-link-active" >Contact</a></li>
                     </ul>
                 </nav>
             </div>

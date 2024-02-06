@@ -12,8 +12,10 @@ import { CategoryComponent } from './components/category/category.component';
 import { FeaturedSectionComponent } from './components/featured-section/featured-section.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { LatestProductsComponent } from './components/latest-products/latest-products.component';
-import { ProductCategoryComponent } from './product/product-category/product-category.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContactComponent } from './components/contact/contact.component';
+import { HomeComponent } from './components/home/home.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -27,13 +29,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FeaturedSectionComponent,
     BannerComponent,
     LatestProductsComponent,
-    ProductCategoryComponent
+    ContactComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

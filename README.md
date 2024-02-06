@@ -16,7 +16,7 @@ In case you want to try step by step, refer to the branch specific details below
 
 # Web Development Series | Project Branches
 
-## Feature Branch: ap1_InitialSetup
+## Feature Branch: ep1_InitialSetup
 Title: E-Commerce Angular Developer Series | Setting Up Your Angular Environment | EP1
 This branch corresponds to the video series Episode 1 (EP1) of our project. 
 
@@ -27,7 +27,7 @@ In this episode, we cover the initial project setup. Follow the steps outlined i
 
 Feel free to check out the code changes and updates in this branch that accompany the tutorial.
 
-## Feature Branch: ap1_databindings
+## Feature Branch: ep2_databindings
 Title: E-Commerce Angular Developer Series | Data Bindings | Angular Directives | EP2 | Angular 16
 This branch corresponds to the video series Episode 2 (EP2) of our project. 
 
@@ -46,3 +46,16 @@ In this episode, we cover the following concepts.
     - *ngFor
 
  We created components and handled dynamic data for product category, product list
+
+## Feature Branch: feature/ep3_ngmodule_in_angular
+Title: E-Commerce Angular Developer Series | NgModules and its usage | EP3 | Angular 16
+This branch corresponds to the video series Episode 3 (EP3) of our project. 
+
+NgModule details explained in Readme file and it is placed here
+ - src/concepts-explained/readme.md
+
+## Feature Branch: feature/ep4_ngmodules_and_routings 
+Title: E-Commerce Angular Dev Series | NgModules, Routing, Lazy Loading | EP4 | Angular 16
+This branch corresponds to the video series Episode 4 (EP4) of our project. 
+
+In this video/branch we cover routing, lazy loading and interview tips and Q&A. We will improve our application by separating our app into smaller feature modules and add navigation to it.
