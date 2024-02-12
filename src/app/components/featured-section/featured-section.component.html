@@ -29,7 +29,7 @@
                         [style.background-image]="'url(' + product.productImages[0].imageUrl + ')'">
                         <ul class="featured__item__pic__hover">
                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                            <li><a [routerLink]="['/product/detail', product.productId]" routerLinkActive="router-link-active"><i class="fa fa-retweet"></i></a></li>
                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                         </ul>
                     </div>

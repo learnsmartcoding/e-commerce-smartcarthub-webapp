@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
   {
-    path: 'product', //this is base route for product/ it starts with /product
+    path: 'product',
     loadChildren: () =>
       import('./product/product.module').then((m) => m.ProductModule),
   },
@@ -16,11 +16,11 @@ const routes: Routes = [
     path: 'shopping',
     loadChildren: () =>
       import('./shopping/shopping.module').then((m) => m.ShoppingModule),
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule], // This routermodule is required for routing to work we export from here
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

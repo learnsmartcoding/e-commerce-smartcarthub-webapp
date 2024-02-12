@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { SharedModule } from './shared/shared.module';
     CategoryComponent,
     FeaturedSectionComponent,
     BannerComponent,
-    LatestProductsComponent,
+    LatestProductsComponent,    
     ContactComponent,
     HomeComponent
   ],
@@ -37,7 +38,8 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

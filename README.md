@@ -59,3 +59,10 @@ Title: E-Commerce Angular Dev Series | NgModules, Routing, Lazy Loading | EP4 | 
 This branch corresponds to the video series Episode 4 (EP4) of our project. 
 
 In this video/branch we cover routing, lazy loading and interview tips and Q&A. We will improve our application by separating our app into smaller feature modules and add navigation to it.
+
+
+## Feature Branch: feature/ep5_httpServiceAndRouting 
+Title: E-Commerce Angular Dev Series | fetch data using httpservice | EP5 | Angular 16
+This branch corresponds to the video series Episode 5 (EP5) of our project. 
+
+In this video/branch we cover routing, how to implement HttpService in Angular using HttpClientModule and we will refactor product list and product component.

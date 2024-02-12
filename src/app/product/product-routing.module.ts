@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { ShopComponent } from './shop/shop.component';
-import { ProductSearchResultComponent } from './product-search-result/product-search-result.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ProductSearchResultComponent } from './product-search-result/product-search-result.component';
+
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'shop' },
@@ -18,7 +19,7 @@ const routes: Routes = [
 export class ProductRoutingModule {}
 
 export const routedComponents = [
-    ShopComponent,
-    ProductSearchResultComponent,
-    ProductDetailsComponent
-]
+  ProductDetailsComponent,
+  ShopComponent,
+  ProductSearchResultComponent
+];
