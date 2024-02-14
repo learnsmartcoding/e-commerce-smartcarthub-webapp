@@ -18,5 +18,6 @@ export class ShoppingRoutingModule {}
 
 export const routedComponents = [
 WishlistComponent,
-CartComponent
+CartComponent,
+CheckoutComponent
 ];
