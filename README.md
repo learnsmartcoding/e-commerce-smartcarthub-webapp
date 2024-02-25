@@ -73,3 +73,10 @@ Title: E-Commerce Angular Dev Series | Input() Output() lifecycle hooks | EP6 | 
 This branch corresponds to the video series Episode 6 (EP6) of our project. 
 
 In this video/branch we cover Angular Lifecycle Hooks, Input() and Output() usages and real time example in our e-commerce application
+
+
+## Feature Branch: feature/ep7_userSessionTimeout_autologout 
+Title: E-Commerce Angular Dev Series | ng-idle auto logout user after 30 minutes | EP7 | Angular 16
+This branch corresponds to the video series Episode 7 (EP7) of our project. 
+
+In this video/branch we cover how to detect user inactivity and provide warning and logout user after 30 minutes
