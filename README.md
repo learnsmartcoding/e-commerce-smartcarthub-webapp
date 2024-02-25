@@ -66,3 +66,10 @@ Title: E-Commerce Angular Dev Series | fetch data using httpservice | EP5 | Angu
 This branch corresponds to the video series Episode 5 (EP5) of our project. 
 
 In this video/branch we cover routing, how to implement HttpService in Angular using HttpClientModule and we will refactor product list and product component.
+
+
+## Feature Branch: feature/ep6_input_output_lifecyclehooks 
+Title: E-Commerce Angular Dev Series | Input() Output() lifecycle hooks | EP6 | Angular 16
+This branch corresponds to the video series Episode 6 (EP6) of our project. 
+
+In this video/branch we cover Angular Lifecycle Hooks, Input() and Output() usages and real time example in our e-commerce application
