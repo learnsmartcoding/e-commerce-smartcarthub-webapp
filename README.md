@@ -67,25 +67,25 @@ This branch corresponds to the video series Episode 5 (EP5) of our project.
 In this video/branch we cover routing, how to implement HttpService in Angular using HttpClientModule and we will refactor product list and product component. We will build product shop page listing products which is retirved using http service web api.
 
 ## Feature Branch: feature/ep6_input_output_lifecyclehooks 
-Title: E-Commerce Angular Dev Series | Input() Output() lifecycle hooks | EP6 | Angular 16
+Title: E-Commerce Angular Dev Series | Exploring Input, Output, and Lifecycle Hooks with Real-Time Examples | EP6
 This branch corresponds to the video series Episode 6 (EP6) of our project. 
 
-In this video/branch we cover Angular Lifecycle Hooks, Input() and Output() usages and real time example in our e-commerce application
+Welcome to Episode 6 of the E-Commerce Angular Developer Series! In this comprehensive tutorial, we delve into the intricacies of Angular development, focusing on Input, Output, and Lifecycle Hooks. Through real-time examples, we explore how to effectively utilize these features in an E-Commerce application. Witness firsthand how Input and Output bindings enhance component communication, and learn how Lifecycle Hooks offer control over component initialization and destruction. Elevate your Angular skills with practical insights and hands-on examples in this in-depth session.
 
 ## Feature Branch: feature/ep7_userSessionTimeout_autologout 
-Title: E-Commerce Angular Dev Series | ng-idle auto logout user after 30 minutes | EP7 | Angular 16
+Title: E-Commerce Angular Dev Series | User Idle Detection with ng-idle & ng-idle/keepalive | EP7
 This branch corresponds to the video series Episode 7 (EP7) of our project. 
 
-In this video/branch we cover how to detect user inactivity and provide warning and logout user after 30 minutes
+Welcome to Episode 7 of the E-Commerce Angular Developer Series! In this tutorial, we delve into the realm of user experience by implementing user idle detection using the powerful "ng-idle" and "ng-idle/keepalive" packages. Discover how to seamlessly trigger user idle warnings and manage session timeouts for enhanced application security. Follow along as we showcase practical examples and provide step-by-step guidance on integrating these packages into your E-Commerce application. Elevate your Angular skills and create a more user-friendly experience.
 
 ## Feature Branch: feature/ep8_searchUsingQueryParams 
-Title: E-Commerce Angular Dev Series | search using query param | EP8 | Angular 16
+Title: E-Commerce Angular Dev Series | Utilizing Query Parameters for Dynamic Search | EP8
 This branch corresponds to the video series Episode 8 (EP8) of our project. 
 
-In this video/branch we will cover how to pass search query in route and retrive it in component using querystring in angular.
+Welcome to Episode 8 of the E-Commerce Angular Developer Series! In this tutorial, we guide you through the powerful usage of query parameters in Angular. Discover how to seamlessly pass search values between components and effectively utilize them in your E-Commerce application. Follow along as we showcase practical examples, providing step-by-step guidance on implementing dynamic searches. Elevate your Angular skills and learn essential techniques for creating a more dynamic and user-friendly shopping experience.
 
 ## Feature Branch: feature/ep9_cartimplementationUsingLocalStorage
-Title: E-Commerce Angular Dev Series | implement shopping cart using local storage | EP9 | Angular 16
+Title: E-Commerce Angular Dev Series | Building a Dynamic Shopping Cart with Real-Time Updates | EP9
 This branch corresponds to the video series Episode 9 (EP9) of our project. 
 
-In this video/branch we will cover how to implement shopping cart logic using local storage and update the cart count dynamically using rxjs operators
+Welcome to Episode 9 of the E-Commerce Angular Developer Series! In this tutorial, we dive into the heart of your E-Commerce application, showcasing how to implement a dynamic shopping cart with real-time updates. Learn how to use Angular services, such as BehaviorSubject, to add, remove, and manage items in the cart seamlessly. We'll also demonstrate how to display the real-time cart item count in the header component for an enhanced user experience. Follow along with clear explanations and hands-on coding examples to elevate your Angular skills in building a robust shopping cart feature.
