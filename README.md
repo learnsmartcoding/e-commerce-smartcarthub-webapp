@@ -80,3 +80,10 @@ Title: E-Commerce Angular Dev Series | ng-idle auto logout user after 30 minutes
 This branch corresponds to the video series Episode 7 (EP7) of our project. 
 
 In this video/branch we cover how to detect user inactivity and provide warning and logout user after 30 minutes
+
+
+## Feature Branch: feature/ep8_searchUsingQueryParams 
+Title: E-Commerce Angular Dev Series | search using query param | EP8 | Angular 16
+This branch corresponds to the video series Episode 8 (EP8) of our project. 
+
+In this video/branch we will cover how to pass search query in route and retrive it in component using querystring in angular.

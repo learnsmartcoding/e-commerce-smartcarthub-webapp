@@ -10,6 +10,7 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shop',
@@ -29,8 +30,8 @@ export class ShopComponent
 {
   price: number = 100;
   totalProducts: number = 0;
-
-  constructor() {
+  searchQuery: string = '';
+  constructor(private router: Router) {
     console.log('1. constructor');
   }
 
@@ -70,5 +71,11 @@ export class ShopComponent
 
   productCountChanged(count: number) {
     this.totalProducts = count;
+  }
+
+  onSearchSubmit() {
+    this.router.navigate(['/product/search'], {
+      queryParams: { query: this.searchQuery },
+    });
   }
 }
