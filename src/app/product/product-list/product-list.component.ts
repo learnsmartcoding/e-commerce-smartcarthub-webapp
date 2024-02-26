@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { ProductModel } from 'src/app/models/product.model';
+import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class ProductListComponent implements OnChanges {
   @Output() productCountChanged = new EventEmitter<number>();
 
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private cartService:CartService) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     this.filteredProducts=this.products.filter(f=>f.price<=this.maxPrice);
@@ -32,4 +33,13 @@ export class ProductListComponent implements OnChanges {
       this.productCountChanged.emit(this.filteredProducts.length);// we do in start of component as well once
     });
   }
+
+  addToCart(product:ProductModel): void {
+    this.cartService.addToCart(product);
+  }
+
+  clearCart(): void {
+    this.cartService.clearCart();
+  }
+
 }

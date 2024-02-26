@@ -2,3 +2,8 @@
 .cursor {
     cursor: pointer;
 }
+
+/* make all a element to have hand pointer to show as clickable*/
+a {
+    cursor: pointer;
+}

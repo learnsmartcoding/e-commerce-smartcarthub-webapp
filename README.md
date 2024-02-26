@@ -60,13 +60,11 @@ This branch corresponds to the video series Episode 4 (EP4) of our project.
 
 In this video/branch we cover routing, lazy loading and interview tips and Q&A. We will improve our application by separating our app into smaller feature modules and add navigation to it.
 
-
 ## Feature Branch: feature/ep5_httpServiceAndRouting 
-Title: E-Commerce Angular Dev Series | fetch data using httpservice | EP5 | Angular 16
+Title: E-Commerce Angular Dev Series | HTTP Service and Routing | EP5 | Angular 16
 This branch corresponds to the video series Episode 5 (EP5) of our project. 
 
-In this video/branch we cover routing, how to implement HttpService in Angular using HttpClientModule and we will refactor product list and product component.
-
+In this video/branch we cover routing, how to implement HttpService in Angular using HttpClientModule and we will refactor product list and product component. We will build product shop page listing products which is retirved using http service web api.
 
 ## Feature Branch: feature/ep6_input_output_lifecyclehooks 
 Title: E-Commerce Angular Dev Series | Input() Output() lifecycle hooks | EP6 | Angular 16
@@ -74,16 +72,20 @@ This branch corresponds to the video series Episode 6 (EP6) of our project.
 
 In this video/branch we cover Angular Lifecycle Hooks, Input() and Output() usages and real time example in our e-commerce application
 
-
 ## Feature Branch: feature/ep7_userSessionTimeout_autologout 
 Title: E-Commerce Angular Dev Series | ng-idle auto logout user after 30 minutes | EP7 | Angular 16
 This branch corresponds to the video series Episode 7 (EP7) of our project. 
 
 In this video/branch we cover how to detect user inactivity and provide warning and logout user after 30 minutes
 
-
 ## Feature Branch: feature/ep8_searchUsingQueryParams 
 Title: E-Commerce Angular Dev Series | search using query param | EP8 | Angular 16
 This branch corresponds to the video series Episode 8 (EP8) of our project. 
 
 In this video/branch we will cover how to pass search query in route and retrive it in component using querystring in angular.
+
+## Feature Branch: feature/ep9_cartimplementationUsingLocalStorage
+Title: E-Commerce Angular Dev Series | implement shopping cart using local storage | EP9 | Angular 16
+This branch corresponds to the video series Episode 9 (EP9) of our project. 
+
+In this video/branch we will cover how to implement shopping cart logic using local storage and update the cart count dynamically using rxjs operators
