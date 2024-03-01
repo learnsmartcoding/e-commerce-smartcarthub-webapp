@@ -6,8 +6,10 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="header__top__left">
                         <ul>
-                            <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                            <li>Free Shipping for all Order of $99</li>
+                            <li><i class="fa fa-envelope"></i> learnsmartcoding@gmail.com</li>
+                            <!-- <li>Free Shipping for all Order of $99</li> -->
+                            <li *ngIf="timeoutSeconds>1 ">Your session will timeout in {{timeoutSeconds}}</li>
+                            <li *ngIf="timeoutSeconds===1">Your session timed out</li>
                         </ul>
                     </div>
                 </div>
@@ -66,7 +68,7 @@
                 <div class="header__cart">
                     <ul>
                         <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>{{cartItems$ | async}}</span></a></li>
                     </ul>
                     <div class="header__cart__price">item: <span>$150.00</span></div>
                 </div>

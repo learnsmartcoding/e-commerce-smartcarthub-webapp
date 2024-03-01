@@ -5,6 +5,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../shared/shared.module';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CategoryComponent } from './category/category.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,8 @@ import { CategoryComponent } from './category/category.component';
   imports: [
     CommonModule,
     ProductRoutingModule   ,
-    SharedModule 
+    SharedModule ,
+    FormsModule
   ],
   providers:[]
 })
