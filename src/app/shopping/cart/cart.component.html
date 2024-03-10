@@ -16,8 +16,7 @@
 </section>
 <!-- Breadcrumb Section End -->
 
- <!-- Shoping Cart Section Begin -->
- <section class="shoping-cart spad">
+<section class="shoping-cart spad">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -33,12 +32,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngIf="!cartItems.length">
+                            <tr *ngIf="!cartItems">
                                 <td colspan="5">
                                     <h3>No items in Cart</h3>
                                 </td>
                             </tr>
-                            <tr *ngFor="let p of cartItems">
+                            <tr *ngFor="let p of cartProducts">
                                 <td class="shoping__cart__item">
                                     <img [src]="p.productImages[1].imageUrl" width="75px" class="cursor" height="75px"
                                         alt="" [routerLink]="['/product/detail',p.productId]"
@@ -51,7 +50,10 @@
                                 <td class="shoping__cart__quantity">
                                     <div class="quantity">
                                         <div class="pro-qty">
-                                            <input type="text" value="{{p.quantity}}">
+                                            <!-- <input type="number" [value]="p?.quantity" > -->
+                                            <button (click)="decrementQuantity(p)" [disabled]="p?.quantity === 1">-</button>
+                                            {{ p?.quantity }}
+                                            <button (click)="incrementQuantity(p)">+</button>
                                         </div>
                                     </div>
                                 </td>
@@ -59,7 +61,7 @@
                                     {{p.price * p.quantity | currency}}
                                 </td>
                                 <td class="shoping__cart__item__close">
-                                    <span class="icon_close" (click)="removeItemFromCart(p.productId)"></span>
+                                    <span class="icon_close" (click)="removeItemFromCart(p.cartId??0)"></span>
                                 </td>
                             </tr>
                         </tbody>
@@ -91,7 +93,7 @@
                     <h5>Cart Total</h5>
                     <ul>
                         <li>Subtotal <span>{{totalAmount | currency}}</span></li>
-                        <li>Total <span>{{totalAmount | currency}}</span></li>
+                        <li>Total <span>{{totalAmount |currency}}</span></li>
                     </ul>
                     <a href="#" class="primary-btn">PROCEED TO CHECKOUT</a>
                 </div>
@@ -99,4 +101,3 @@
         </div>
     </div>
 </section>
-<!-- Shoping Cart Section End -->

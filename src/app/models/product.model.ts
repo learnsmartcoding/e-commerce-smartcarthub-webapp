@@ -1,4 +1,7 @@
-export interface ProductModel {
+export interface CartId{
+  cartId?:number;
+}
+export interface ProductModel extends CartId {
     productId: number;
     productName: string;
     productDescription:string;

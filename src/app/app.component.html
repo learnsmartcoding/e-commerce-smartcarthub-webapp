@@ -3,18 +3,19 @@
   <div class="loader"></div>
 </div>
 
-
 <app-humberger></app-humberger>
 <app-header [timeoutSeconds]="countdown??-1"></app-header>
 
 <section class="hero">
   <div class="container">
-    <router-outlet></router-outlet>
+    <router-outlet *ngIf="!isIframe"></router-outlet>
   </div>
 </section>
+
+<!-- <app-claims [claims]="claims"></app-claims> -->
+
 <!-- <app-banner></app-banner>
 <app-latest-products></app-latest-products>
 <app-blog-section></app-blog-section> -->
 <app-footer></app-footer>
-
-<div>IDLE_STATE: {{idleState}}, COUNTDOWN: {{countdown}}, LAST_PING: {{lastPing | date}}</div>
+<!-- <div>IDLE_STATE: {{idleState}}, COUNTDOWN: {{countdown}}, LAST_PING: {{lastPing | date}}</div> -->

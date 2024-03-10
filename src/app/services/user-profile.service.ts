@@ -1,26 +1,27 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
-
-import { DatePipe } from '@angular/common';
 import { environment } from 'src/environments/environment';
-import { ProductModel } from '../models/product.model';
+
+export interface UserProfileModel {
+  UserId: number;
+  DisplayName: string;
+  FirstName: string;
+  LastName: string;
+  Email: string;
+  AdObjId: string;
+}
 
 @Injectable({ providedIn: 'root' })
-export class ProductService {
+export class UserProfileService {
   private apiUrl: string;
   constructor(private http: HttpClient) {
-    this.apiUrl = environment.apiBaseUrl.products;
+    this.apiUrl = environment.apiBaseUrl.userProfile;
   }
 
-  getProduct(id: number): Observable<ProductModel> {
-    const url = `${this.apiUrl}/products/${id}`;
-    return this.get<ProductModel>(url);
-  }
-
-  getProducts(fetchCount: number): Observable<ProductModel[]> {
-    const url = `${this.apiUrl}/products?pageNumber=1&pageSize=${fetchCount}&sortBy=ProductName`;
-    return this.getArrary<ProductModel>(url);
+  GetUserProfile(): Observable<UserProfileModel> {
+    const url = `${this.apiUrl}/user-profiles`;
+    return this.get<UserProfileModel>(url);
   }
 
   private get<T>(url: string, options?: any): Observable<T> {

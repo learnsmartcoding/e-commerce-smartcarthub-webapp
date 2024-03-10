@@ -1,26 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
-
-import { DatePipe } from '@angular/common';
 import { environment } from 'src/environments/environment';
-import { ProductModel } from '../models/product.model';
+import { OrderModel } from '../models/order.model';
 
 @Injectable({ providedIn: 'root' })
-export class ProductService {
+export class OrderService {
   private apiUrl: string;
   constructor(private http: HttpClient) {
-    this.apiUrl = environment.apiBaseUrl.products;
+    this.apiUrl = environment.apiBaseUrl.orders;
   }
 
-  getProduct(id: number): Observable<ProductModel> {
-    const url = `${this.apiUrl}/products/${id}`;
-    return this.get<ProductModel>(url);
-  }
-
-  getProducts(fetchCount: number): Observable<ProductModel[]> {
-    const url = `${this.apiUrl}/products?pageNumber=1&pageSize=${fetchCount}&sortBy=ProductName`;
-    return this.getArrary<ProductModel>(url);
+  GetOrders(): Observable<OrderModel[]> {
+    const url = `${this.apiUrl}/orders`;
+    return this.getArrary<OrderModel>(url);
   }
 
   private get<T>(url: string, options?: any): Observable<T> {
