@@ -1,27 +1,27 @@
-  <!-- Product Section Begin -->
-  <section class="product spad">
+<!-- Product Section Begin -->
+<section class="product spad">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-5">
                 <div class="sidebar">
                     <div class="sidebar__item">
-                        <h4>Department</h4>
+                        <h4>Department</h4>            
                         <app-category></app-category>
                     </div>
                     <div class="sidebar__item">
                         <h4>Price</h4>
-                        <input type="number" class="form-control" [(ngModel)]="price" 
-                        (ngModelChange)="onPriceChange()" 
-                        min="1" max="5000" />
+                        <div class="price-range-wrap">
+                            <input type="number" class="form-control" [(ngModel)]="price" 
+                            (ngModelChange)="onPriceChange()" 
+                            min="1" max="5000" />
+                          </div>
                     </div>
+
                     <div class="sidebar__item">
                         <h4>Search</h4>
                         <div class="price-range-wrap">
-                            <input type="text" class="form-control"
-                             placeholder="What do you need?" 
-                             [(ngModel)]="searchQuery"><br>
-                            <button type="button" 
-                            (click)="onSearchSubmit()" class="site-btn">SEARCH</button>
+                            <input type="text" class="form-control" placeholder="What do you need?" [(ngModel)]="searchQuery"><br>
+                            <button type="button" (click)="onSearchSubmit()" class="site-btn">SEARCH</button>
                           </div>
                     </div>
                     <div class="sidebar__item sidebar__item__color--option">
@@ -162,6 +162,7 @@
                     <div class="section-title product__discount__title">
                         <h2>Sale Off</h2>
                     </div>
+
                     <app-product-list [maxPrice]="price"></app-product-list>
                 </div>
                 <div class="filter__item">
@@ -189,6 +190,7 @@
                         </div>
                     </div>
                 </div>
+
                 <app-product-list [maxPrice]="price" (productCountChanged)="productCountChanged($event)"></app-product-list>
             </div>
         </div>

@@ -8,7 +8,6 @@ import {
   OnChanges,
   OnDestroy,
   OnInit,
-  SimpleChanges,
 } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -28,11 +27,18 @@ export class ShopComponent
     AfterViewChecked,
     OnDestroy
 {
-  price: number = 100;
+  message: string = 'Initial Message';
+  price: number = 1000;
   totalProducts: number = 0;
   searchQuery: string = '';
+
   constructor(private router: Router) {
     console.log('1. constructor');
+  } 
+
+  onSearchSubmit(): void {    
+    // Navigate to the product/search route with the searchQuery as a parameter    
+    this.router.navigate(['/product/search'], { queryParams: { query: this.searchQuery } });
   }
 
   ngOnChanges() {
@@ -67,15 +73,13 @@ export class ShopComponent
     console.log('9. ngOnDestroy');
   }
 
-  onPriceChange() {}
+  onPriceChange(): void {
+    // Do something with the changed price
+    console.log('Price changed:', this.price);
+    // Call your function or perform any logic here
+  }
 
   productCountChanged(count: number) {
     this.totalProducts = count;
-  }
-
-  onSearchSubmit() {
-    this.router.navigate(['/product/search'], {
-      queryParams: { query: this.searchQuery },
-    });
   }
 }

@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { outputAst } from '@angular/compiler';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { CartModel } from 'src/app/models/cart.model';
 import { ProductModel } from 'src/app/models/product.model';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
@@ -8,38 +10,45 @@ import { ProductService } from 'src/app/services/product.service';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
 })
-export class ProductListComponent implements OnChanges {
+export class ProductListComponent implements OnInit, OnChanges {
   products: ProductModel[] = [];
-  @Input()  maxPrice: number = 10;//Now we will make this as input so parent component can pass dynamic values
-  filteredProducts: ProductModel[] = [];
-  @Output() productCountChanged = new EventEmitter<number>();
+  @Input() maxPrice: number = 5000;
+  @Output() productCountChanged = new EventEmitter<number>();  
+  filteredProducts: ProductModel[]=[];
 
-
-  constructor(private productService: ProductService, private cartService:CartService) {}
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.filteredProducts=this.products.filter(f=>f.price<=this.maxPrice);
-    this.productCountChanged.emit(this.filteredProducts.length);
-  }
+  constructor(private productService: ProductService,
+    private cartService: CartService) {}
 
   ngOnInit(): void {
     this.getProducts();
   }
 
-  getProducts() {
-    this.productService.getProducts(10).subscribe((d) => {
+  ngOnChanges() {
+    console.log('2. ngOnChanges');    
+    this.filteredProducts = this.products.filter(f=>f.price<=this.maxPrice);    
+    this.productCountChanged.emit(this.filteredProducts.length);
+  }
+
+  getProducts() {    
+    this.productService.getProducts(10).subscribe((d) => {      
       this.products = d;
-      this.filteredProducts = d; //assign initially for this as well
-      this.productCountChanged.emit(this.filteredProducts.length);// we do in start of component as well once
+      this.filteredProducts = d;
+      this.productCountChanged.emit(this.filteredProducts.length);
     });
   }
 
   addToCart(product:ProductModel): void {
-    this.cartService.addToCart(product);
+    const cartModel:CartModel={
+      productId: product.productId,
+      cartId: 0,
+      userId: 0,
+      quantity: product.quantity
+    };
+    
+    this.cartService.addToCart(cartModel);
   }
 
   clearCart(): void {
     this.cartService.clearCart();
   }
-
 }
