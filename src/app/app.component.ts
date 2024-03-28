@@ -64,6 +64,8 @@ export class AppComponent {
     private authService: MsalService,
     private msalBroadcastService: MsalBroadcastService,
     private loginService: AuthService,
+    private userProfileService:UserProfileService,
+    private orderService: OrderService,
     private router: Router, private titleService: Title
   ) {
     // set idle parameters
@@ -114,12 +116,12 @@ export class AppComponent {
         this.updateTitle(event.url);
       }
     });
-
     //this.handleLoginSuccess(); //this stores the redirecturl and handles it
 
     // right when the component initializes, start reset state and start watching
     this.reset();
- 
+    // this.getProfile();
+     this.getOrders();
     this.isIframe = window !== window.parent && !window.opener;
     this.setLoginDisplay();
 
@@ -341,6 +343,13 @@ export class AppComponent {
   ngOnDestroy(): void {
     this._destroying$.next(undefined);
     this._destroying$.complete();
+  }
+
+  getProfile(){
+    this.userProfileService.getUserProfile().subscribe(s=>console.log(JSON.stringify(s)));
+  }
+  getOrders(){
+    this.orderService.GetOrders().subscribe(data=>console.log(JSON.stringify(data)));
   }
 
   private updateTitle(url: string) {

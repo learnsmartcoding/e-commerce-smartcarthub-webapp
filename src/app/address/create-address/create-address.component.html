@@ -10,8 +10,7 @@
         <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-lg-6 col-md-6">
-                    <input type="text" id="street" 
-                    formControlName="street" placeholder="Enter street address" maxlength="255" class="form-control">
+                    <input type="text" id="street" formControlName="street" placeholder="Enter street address" maxlength="255" class="form-control">
                     <div *ngIf="isInvalid('street')" class="text-danger">
                         <div *ngIf="addressForm.get('street')?.errors">Street is required</div>                        
                     </div>
