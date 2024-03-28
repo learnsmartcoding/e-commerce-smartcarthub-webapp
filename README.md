@@ -108,3 +108,29 @@ Learn how to streamline your deployment process by deploying .NET Core 8 web API
 Title: Deploying Angular App to Azure App Service | CI/CD with Azure Devops pipeline | Build & Upload
 
 Unlock the full potential of your Angular 16+ applications by mastering the deployment process to Azure App Service using Azure DevOps Pipelines. This step-by-step tutorial guides you through creating build and release pipelines within Azure DevOps, ensuring seamless integration with your Angular projects. Explore best practices for code source control, efficient builds, and smooth deployment workflows. Elevate your development game and deliver your Angular apps with confidence using Azure DevOps Pipelines!
+
+## Feature Branch: feature/EP13_SetPageTitleDynamically
+Title: E-Commerce Angular Dev Series | Set Page Title dynamically using Title Service | EP13
+
+Welcome to Episode 13 of the E-Commerce Angular Developer Series! In this tutorial, we explore the importance of dynamic page titles in web applications and demonstrate how to set them dynamically based on route matches using Angular's Title Service. Learn how to enhance user experience and improve SEO by providing relevant page titles that change dynamically as users navigate through your application. Follow along with practical examples and step-by-step guidance to implement this powerful feature in your Angular projects.
+
+## Feature Branch: feature/EP14_ProtectRoutesWithGuard
+Title: E-Commerce Angular Dev Series | Implementing Route Guards with CanActivateFn and CanActivateChildFn | EP14
+
+Welcome to Episode 14 of the E-Commerce Angular Developer Series! In this tutorial, we delve into securing routes within your Angular application using route guards. Learn how to implement CanActivateFn and CanActivateChildFn to protect routes based on user authentication and role-based access control. Leveraging our custom AuthService, which interacts with Azure AD B2C for authentication, we demonstrate how to determine user roles such as admin and support to control access to specific routes. Follow along with practical examples and step-by-step guidance to strengthen the security of your Angular application.
+
+## Feature Branch: feature/EP15_ResolverAndAutoSpinner
+Title: E-Commerce Angular Dev Series | Enhancing User Experience with Resolver and Spinner Integration | EP15
+
+Welcome to Episode 15 of the E-Commerce Angular Developer Series! In this tutorial, we focus on enhancing user experience by leveraging Angular Resolver and Spinner integration. Learn how to use Resolver to prefetch data for a route before the component is activated, ensuring smooth navigation and improved performance. Specifically, we utilize the ResolverFn to fetch product details when navigating to a product page. Additionally, discover how to automatically detect outgoing API calls and dynamically start and stop a spinner in the app component to provide visual feedback to users. Follow along with practical examples and step-by-step guidance to elevate the user experience of your Angular application.
+
+## Feature Branch: feature/EP16_ReactiveForm_AddressCURD
+Title: E-Commerce Angular Dev Series | User Address Management with Reactive Forms | EP16
+
+Welcome to Episode 16 of the E-Commerce Angular Developer Series! In this tutorial, we dive into building robust user address management functionality using Reactive Forms. Learn how to create, edit, and display user addresses for tasks such as shipping and billing within your E-Commerce application. Explore the power of Reactive Forms in Angular for handling complex form scenarios with ease and efficiency. Follow along as we demonstrate practical examples and provide step-by-step guidance to streamline the address management process for your users.
+
+## Feature Branch: feature/EP17_OrderPlacement_OrderDetails
+Title: E-Commerce Angular Dev Series | Seamless Checkout Process and Order Management | Final Episode
+
+Welcome to the final episode of the E-Commerce Angular Developer Series! In this tutorial, we guide you through the seamless checkout process and order management within our E-Commerce application. Learn how to navigate from the cart to the checkout page, where users can finalize their shipping address selection, review product details, and receive order estimates. Discover how to create orders and handle successful responses, leading users to the order list page where they can view all their placed orders. Dive into creating a user-friendly interface for displaying order details and items. Follow along with practical examples and step-by-step guidance to complete the checkout flow and order management functionalities.
+
