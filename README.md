@@ -123,3 +123,8 @@ Welcome to Episode 14 of the E-Commerce Angular Developer Series! In this tutori
 Title: E-Commerce Angular Dev Series | Enhancing User Experience with Resolver and Spinner Integration | EP15
 
 Welcome to Episode 15 of the E-Commerce Angular Developer Series! In this tutorial, we focus on enhancing user experience by leveraging Angular Resolver and Spinner integration. Learn how to use Resolver to prefetch data for a route before the component is activated, ensuring smooth navigation and improved performance. Specifically, we utilize the ResolverFn to fetch product details when navigating to a product page. Additionally, discover how to automatically detect outgoing API calls and dynamically start and stop a spinner in the app component to provide visual feedback to users. Follow along with practical examples and step-by-step guidance to elevate the user experience of your Angular application.
+
+## Feature Branch: feature/EP16_ReactiveForm_AddressCURD
+Title: E-Commerce Angular Dev Series | User Address Management with Reactive Forms | EP16
+
+Welcome to Episode 16 of the E-Commerce Angular Developer Series! In this tutorial, we dive into building robust user address management functionality using Reactive Forms. Learn how to create, edit, and display user addresses for tasks such as shipping and billing within your E-Commerce application. Explore the power of Reactive Forms in Angular for handling complex form scenarios with ease and efficiency. Follow along as we demonstrate practical examples and provide step-by-step guidance to streamline the address management process for your users.

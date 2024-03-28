@@ -29,7 +29,7 @@ export const canActivateAdminChildGuard: CanActivateChildFn  = (
     authService.userRoles.filter((f) => f === 'Support').length === 0
   ) {
     toastrService.error(
-      'You do not have access to Admin Module',
+      'You are admin but you should have Support Role as well',
       'Access Denied'
     );
     inject(Router).navigate(['/home']); // Use inject(Router) to get the Router service

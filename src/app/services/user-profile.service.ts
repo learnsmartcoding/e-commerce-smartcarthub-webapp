@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { AddressModel } from '../models/address.model';
 
 export interface UserProfileModel {
   UserId: number;
@@ -19,9 +20,32 @@ export class UserProfileService {
     this.apiUrl = environment.apiBaseUrl.userProfile;
   }
 
-  GetUserProfile(): Observable<UserProfileModel> {
+  getUserProfile(): Observable<UserProfileModel> {
     const url = `${this.apiUrl}/user-profiles`;
     return this.get<UserProfileModel>(url);
+  }
+
+  getAddressById(id: number): Observable<AddressModel> {
+    const url = `${this.apiUrl}/address/${id}`;
+    return this.get<AddressModel>(url);
+  }
+
+  getAddress(): Observable<AddressModel[]> {
+    const url = `${this.apiUrl}/address`;
+    return this.getArrary<AddressModel>(url);
+  }
+  saveAddress(model: AddressModel) {
+    const url = `${this.apiUrl}/address`;
+    return this.http.post(url, model);
+  }
+  updateAddress(id: number, model: AddressModel) {
+    const url = `${this.apiUrl}/address`;
+    return this.http.put(url, model);
+  }
+
+  deleteAddress(id: number) {
+    const url = `${this.apiUrl}/address/${id}`;
+    return this.http.delete(url);
   }
 
   private get<T>(url: string, options?: any): Observable<T> {

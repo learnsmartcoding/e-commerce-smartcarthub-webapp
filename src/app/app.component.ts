@@ -346,7 +346,7 @@ export class AppComponent {
   }
 
   getProfile(){
-    this.userProfileService.GetUserProfile().subscribe(s=>console.log(JSON.stringify(s)));
+    this.userProfileService.getUserProfile().subscribe(s=>console.log(JSON.stringify(s)));
   }
   getOrders(){
     this.orderService.GetOrders().subscribe(data=>console.log(JSON.stringify(data)));
