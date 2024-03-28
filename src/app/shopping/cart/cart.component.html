@@ -95,7 +95,7 @@
                         <li>Subtotal <span>{{totalAmount | currency}}</span></li>
                         <li>Total <span>{{totalAmount |currency}}</span></li>
                     </ul>
-                    <a href="#" class="primary-btn">PROCEED TO CHECKOUT</a>
+                    <a [routerLink]="['/shopping/checkout']" routerLinkActive="router-link-active"  class="primary-btn">PROCEED TO CHECKOUT</a>
                 </div>
             </div>
         </div>

@@ -128,3 +128,9 @@ Welcome to Episode 15 of the E-Commerce Angular Developer Series! In this tutori
 Title: E-Commerce Angular Dev Series | User Address Management with Reactive Forms | EP16
 
 Welcome to Episode 16 of the E-Commerce Angular Developer Series! In this tutorial, we dive into building robust user address management functionality using Reactive Forms. Learn how to create, edit, and display user addresses for tasks such as shipping and billing within your E-Commerce application. Explore the power of Reactive Forms in Angular for handling complex form scenarios with ease and efficiency. Follow along as we demonstrate practical examples and provide step-by-step guidance to streamline the address management process for your users.
+
+## Feature Branch: feature/EP17_OrderPlacement_OrderDetails
+Title: E-Commerce Angular Dev Series | Seamless Checkout Process and Order Management | Final Episode
+
+Welcome to the final episode of the E-Commerce Angular Developer Series! In this tutorial, we guide you through the seamless checkout process and order management within our E-Commerce application. Learn how to navigate from the cart to the checkout page, where users can finalize their shipping address selection, review product details, and receive order estimates. Discover how to create orders and handle successful responses, leading users to the order list page where they can view all their placed orders. Dive into creating a user-friendly interface for displaying order details and items. Follow along with practical examples and step-by-step guidance to complete the checkout flow and order management functionalities.
+

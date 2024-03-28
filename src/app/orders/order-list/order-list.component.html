@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>                    
+                    <th>Order Date</th>
+                    <th>Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orders" (click)="toggleOrderDetails(order.orderId)">
+                    <td>{{ order.orderId }}</td>                    
+                    <td>{{ order.orderDate | date: 'medium' }}</td>
+                    <td>{{ order.totalAmount | currency }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngFor="let order of orders">
+            <div class="order-details" *ngIf="expandedOrder === order.orderId">
+                <h4>Order Items</h4>
+                <table class="table">
+                    <thead>
+                        <tr>                            
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of order.orderItemsModel">                            
+                            <td [routerLink]="['/product/detail',item.productId]" routerLinkActive="router-link-active" >{{ getProductById(item.productId)?.productName }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.price | currency }}</td>
+                            <td>{{ item.totalCost | currency }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,16 +3,19 @@ export interface OrderModel {
     userId?: number;
     orderDate: Date;
     totalAmount: number;
-    orderItemsModel?: OrderItemModel[];
+    orderItems?: OrderItems[];
+    orderItemsModel?:OrderItemsModel[],
     orderStatusesModel?: OrderStatusModel[];
   }
   
-  export interface OrderItemModel {
+  export interface OrderItemsModel extends OrderItems{
+
+  }
+
+  export interface OrderItems {
     orderItemId: number;
-    orderId?: number;
-  
-    productId: number;
-  
+    orderId?: number;  
+    productId: number;  
     quantity: number;
     price: number;
     totalCost?: number;

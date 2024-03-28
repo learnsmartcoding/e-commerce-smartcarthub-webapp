@@ -14,8 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'wishlist',
-    component: WishlistComponent,
-    canActivate: [canActivateGuard],
+    component: WishlistComponent
   },
   {
     path: 'checkout',
