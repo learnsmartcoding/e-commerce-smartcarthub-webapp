@@ -22,10 +22,10 @@ import { Idle, DEFAULT_INTERRUPTSOURCES } from '@ng-idle/core';
 import { Keepalive } from '@ng-idle/keepalive';
 import { ToastrService } from 'ngx-toastr';
 import { Subject, filter, takeUntil } from 'rxjs';
-import { LoginService } from './services/login.service';
+import { AuthService } from './services/auth.service';
 import { b2cPolicies } from './auth-config';
 import { Claim } from './models/claim';
-import { UserProfileModel, UserProfileService } from './services/user-profile.service';
+import { UserProfileService } from './services/user-profile.service';
 import { OrderService } from './services/order.service';
 import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
@@ -61,7 +61,7 @@ export class AppComponent {
     @Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration,
     private authService: MsalService,
     private msalBroadcastService: MsalBroadcastService,
-    private loginService: LoginService,
+    private loginService: AuthService,
     private userProfileService:UserProfileService,
     private orderService: OrderService,
     private router: Router, private titleService: Title
@@ -114,11 +114,12 @@ export class AppComponent {
         this.updateTitle(event.url);
       }
     });
+    //this.handleLoginSuccess(); //this stores the redirecturl and handles it
 
     // right when the component initializes, start reset state and start watching
     this.reset();
-    this.getProfile();
-    this.getOrders();
+    // this.getProfile();
+    // this.getOrders();
     this.isIframe = window !== window.parent && !window.opener;
     this.setLoginDisplay();
 
@@ -413,5 +414,18 @@ export class AppComponent {
     }
 
     this.titleService.setTitle(pageTitle);
+  }
+
+   // After successful login, navigate to the stored route
+   handleLoginSuccess() {
+    
+    const redirectUrl = sessionStorage.getItem('redirectUrl');
+    if (redirectUrl) {
+      this.router.navigateByUrl(redirectUrl);
+      sessionStorage.removeItem('redirectUrl'); // Remove the stored route after redirection
+    } else {
+      // Redirect to default route after login if no route was stored
+      this.router.navigate(['/']);
+    }
   }
 }

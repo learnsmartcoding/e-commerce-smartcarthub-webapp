@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { canActivateAdminGuard } from './guards/admin.guard';
+import { canActivateGuard } from './guards/login.guard';
+import { canActivateAdminChildGuard } from './guards/admin-child.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -19,11 +22,14 @@ const routes: Routes = [
   },
   {
     path: 'user/address',
+    canActivate: [canActivateGuard],
     loadChildren: () =>
       import('./address/address.module').then((m) => m.AddressModule),
   },
   {
     path: 'admin',
+    canActivate: [canActivateAdminGuard],
+    canActivateChild: [canActivateAdminChildGuard],
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
   },

@@ -113,3 +113,8 @@ Unlock the full potential of your Angular 16+ applications by mastering the depl
 Title: E-Commerce Angular Dev Series | Set Page Title dynamically using Title Service | EP13
 
 Welcome to Episode 13 of the E-Commerce Angular Developer Series! In this tutorial, we explore the importance of dynamic page titles in web applications and demonstrate how to set them dynamically based on route matches using Angular's Title Service. Learn how to enhance user experience and improve SEO by providing relevant page titles that change dynamically as users navigate through your application. Follow along with practical examples and step-by-step guidance to implement this powerful feature in your Angular projects.
+
+## Feature Branch: feature/EP14_ProtectRoutesWithGuard
+Title: E-Commerce Angular Dev Series | Implementing Route Guards with CanActivateFn and CanActivateChildFn | EP14
+
+Welcome to Episode 14 of the E-Commerce Angular Developer Series! In this tutorial, we delve into securing routes within your Angular application using route guards. Learn how to implement CanActivateFn and CanActivateChildFn to protect routes based on user authentication and role-based access control. Leveraging our custom AuthService, which interacts with Azure AD B2C for authentication, we demonstrate how to determine user roles such as admin and support to control access to specific routes. Follow along with practical examples and step-by-step guidance to strengthen the security of your Angular application.
