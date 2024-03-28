@@ -3,10 +3,10 @@
 
 import { EnvironmentConfiguration } from 'src/app/models/environment-config';
 
-const userProfileUrl = 'https://localhost:7262/api';
-const productUrl = 'https://localhost:7086/api';
-const orderUrl = 'https://localhost:7208/api';
-const cartWishlistUrl='https://localhost:7292/api';
+const userProfileUrl = 'https://lsc-ecommerce-userprofile.azurewebsites.net/api';
+const productUrl = 'https://smartcarthubproduct-api.azurewebsites.net/api';
+const orderUrl = 'https://lsc-ecommerce-orders.azurewebsites.net/api';
+const cartWishlistUrl='https://lsc-ecommerce-cartwishlist.azurewebsites.net/api';
 const adb2cProfileApiScopeBasePath='https://learnsmartcoding.onmicrosoft.com/smartcarthub/userprofile/api';
 const adb2cProductApiScopeBasePath='https://learnsmartcoding.onmicrosoft.com/smartcarthub/product/api';
 const adb2cOrderApiScopeBasePath='https://learnsmartcoding.onmicrosoft.com/smartcarthub/orders/api';

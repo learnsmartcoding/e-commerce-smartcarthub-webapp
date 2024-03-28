@@ -45,10 +45,7 @@ export function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration {
   ]);
 
   protectedResourceMap.set(productProtectedResource.api.endpoint, [
-    // {
-    //   httpMethod: 'GET',
-    //   scopes: [...productProtectedResource.api.scopes.read],
-    // },
+   
     {
       httpMethod: 'POST',
       scopes: [...productProtectedResource.api.scopes.write],

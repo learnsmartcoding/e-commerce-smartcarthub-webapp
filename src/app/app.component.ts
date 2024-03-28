@@ -107,8 +107,8 @@ export class AppComponent {
   ngOnInit(): void {
     // right when the component initializes, start reset state and start watching
     this.reset();
-    //this.getProfile();
-    //this.getOrders();
+    this.getProfile();
+    this.getOrders();
     this.isIframe = window !== window.parent && !window.opener;
     this.setLoginDisplay();
 
@@ -333,7 +333,7 @@ export class AppComponent {
   }
 
   getProfile(){
-    this.userProfileService.GetUserProfile().subscribe(s=>alert());
+    this.userProfileService.GetUserProfile().subscribe(s=>console.log(JSON.stringify(s)));
   }
   getOrders(){
     this.orderService.GetOrders().subscribe(data=>console.log(JSON.stringify(data)));
