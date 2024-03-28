@@ -118,3 +118,8 @@ Welcome to Episode 13 of the E-Commerce Angular Developer Series! In this tutori
 Title: E-Commerce Angular Dev Series | Implementing Route Guards with CanActivateFn and CanActivateChildFn | EP14
 
 Welcome to Episode 14 of the E-Commerce Angular Developer Series! In this tutorial, we delve into securing routes within your Angular application using route guards. Learn how to implement CanActivateFn and CanActivateChildFn to protect routes based on user authentication and role-based access control. Leveraging our custom AuthService, which interacts with Azure AD B2C for authentication, we demonstrate how to determine user roles such as admin and support to control access to specific routes. Follow along with practical examples and step-by-step guidance to strengthen the security of your Angular application.
+
+## Feature Branch: feature/EP15_ResolverAndAutoSpinner
+Title: E-Commerce Angular Dev Series | Enhancing User Experience with Resolver and Spinner Integration | EP15
+
+Welcome to Episode 15 of the E-Commerce Angular Developer Series! In this tutorial, we focus on enhancing user experience by leveraging Angular Resolver and Spinner integration. Learn how to use Resolver to prefetch data for a route before the component is activated, ensuring smooth navigation and improved performance. Specifically, we utilize the ResolverFn to fetch product details when navigating to a product page. Additionally, discover how to automatically detect outgoing API calls and dynamically start and stop a spinner in the app component to provide visual feedback to users. Follow along with practical examples and step-by-step guidance to elevate the user experience of your Angular application.

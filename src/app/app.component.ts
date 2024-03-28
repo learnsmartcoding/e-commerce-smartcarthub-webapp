@@ -29,6 +29,7 @@ import { UserProfileService } from './services/user-profile.service';
 import { OrderService } from './services/order.service';
 import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
+import { SpinnerService } from './services/spinner.service';
 
 type IdTokenClaimsWithPolicyId = IdTokenClaims & {
   acr?: string;
@@ -54,6 +55,7 @@ export class AppComponent {
 
   // add parameters for Idle and Keepalive (if using) so Angular will inject them from the module
   constructor(
+    public spinnerService: SpinnerService,
     private idle: Idle,
     keepalive: Keepalive,
     cd: ChangeDetectorRef,
