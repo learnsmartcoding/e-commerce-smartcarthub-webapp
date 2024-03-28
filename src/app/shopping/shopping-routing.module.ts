@@ -3,11 +3,24 @@ import { Routes, RouterModule } from '@angular/router';
 import { WishlistComponent } from '../shopping/wishlist/wishlist.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { canActivateAdminGuard } from '../guards/admin.guard';
+import { canActivateGuard } from '../guards/login.guard';
 
 const routes: Routes = [
-  { path: 'cart', component: CartComponent },
-  { path: 'wishlist', component: WishlistComponent },
-  { path: 'checkout', component: CheckoutComponent },
+  {
+    path: 'cart',
+    component: CartComponent,
+    canActivate: [canActivateGuard],
+  },
+  {
+    path: 'wishlist',
+    component: WishlistComponent
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
+    canActivate: [canActivateGuard],
+  },
 ];
 
 @NgModule({
@@ -17,7 +30,7 @@ const routes: Routes = [
 export class ShoppingRoutingModule {}
 
 export const routedComponents = [
-WishlistComponent,
-CartComponent,
-CheckoutComponent
+  WishlistComponent,
+  CartComponent,
+  CheckoutComponent,
 ];

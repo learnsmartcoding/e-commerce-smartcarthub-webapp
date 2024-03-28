@@ -16,6 +16,11 @@ export class OrderService {
     return this.getArrary<OrderModel>(url);
   }
 
+  placeOrder(order: OrderModel): Observable<any> {
+    const url = `${this.apiUrl}/orders`;
+    return this.http.post<any>(url, order);
+  }
+
   private get<T>(url: string, options?: any): Observable<T> {
     return this.http
       .get(url, options)

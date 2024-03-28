@@ -27,9 +27,10 @@ import {
 } from '@azure/msal-angular';
 import { CartService } from 'src/app/services/cart.service';
 import { b2cPolicies } from 'src/app/auth-config';
-import { LoginService } from 'src/app/services/login.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { Claim } from 'src/app/models/claim';
 import { ToastrService } from 'ngx-toastr';
+import { appConstants } from 'src/app/shared/constants/data.model';
 type IdTokenClaimsWithPolicyId = IdTokenClaims & {
   acr?: string;
   tfp?: string;
@@ -49,13 +50,14 @@ export class HeaderComponent implements OnChanges {
   claims: Claim[] = [];
 
   private readonly _destroying$ = new Subject<void>();
+  contactEmail = appConstants.contactEmailId;
 
   constructor(
     private cartService: CartService,
     @Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration,
     private authService: MsalService,
     private msalBroadcastService: MsalBroadcastService,
-    private loginService: LoginService,
+    private loginService: AuthService,
     private toastrService: ToastrService
   ) {}
 
@@ -71,7 +73,7 @@ export class HeaderComponent implements OnChanges {
 
   ngOnInit(): void {
     this.cartItems$ = this.cartService.cart$;
-    this.cartTotal$ =this.cartService.cartTotal$;
+    this.cartTotal$ = this.cartService.cartTotal$;
 
     this.isIframe = window !== window.parent && !window.opener;
     this.setLoginDisplay();

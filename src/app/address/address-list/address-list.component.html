@@ -1,0 +1,57 @@
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section" [style.backgroundImage]="backgroundImageUrl">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                    <h2>Address</h2>
+                    <div class="breadcrumb__option">
+                        <a [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+                        <span>User Address</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<section class="shoping-cart spad">
+    <div class="container">
+       
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="shoping__cart__table">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Address</th>
+                            <th>Shipping</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let address of addresses">
+                            <td>
+                              {{ address.street }}, {{ address.city }}, {{ address.state }}, {{ address.zipCode }}
+                            </td>
+                            <td>{{ address.isShippingAddress ? 'Yes' : 'No' }}</td>
+                            <td>
+                              <button class="btn btn-primary" [routerLink]="['/user/address/edit', address.addressId]">Edit</button>
+                              <button class="btn btn-danger" (click)="deleteAddress(address.addressId)">Delete</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <button class="btn btn-primary" [routerLink]="['/user/address/create']" routerLinkActive="router-link-active" >Add New Address</button>               
+            </div>     
+                  
+        </div>
+    </div>
+</section>

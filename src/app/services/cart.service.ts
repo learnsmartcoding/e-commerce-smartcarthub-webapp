@@ -12,7 +12,7 @@ import { ProductService } from './product.service';
   providedIn: 'root',
 })
 export class CartService {
-  products: ProductModel[] = [];
+  private products: ProductModel[] = [];
   private cartUrl = `${environment.apiBaseUrl.carts}/carts`;
   private cartSubject = new BehaviorSubject<number>(0);
   cart$: Observable<number> = this.cartSubject.asObservable();
@@ -25,14 +25,15 @@ export class CartService {
     private toastrService: ToastrService,
     private productService: ProductService
   ) {
-    this.productService.getProducts(500).subscribe((d) => (this.products = d));
+    this.productService
+      .getProducts(500)
+      .subscribe((d) => (this.products = d));
   }
 
   getCart(): Observable<CartModel[]> {
     return this.http.get<CartModel[]>(this.cartUrl).pipe(
       tap((cart) => {
         this.cartSubject.next(cart.length);
-        this.updateCartTotal();
       })
     );
   }
@@ -69,7 +70,6 @@ export class CartService {
       tap(() => {
         this.getCart().subscribe((cart) => {
           this.cartSubject.next(cart.length); // Notify subscribers
-          this.updateCartTotal();
           this.toastrService.info('Item removed from cart!', 'Cart updated');
         });
       })
@@ -80,38 +80,35 @@ export class CartService {
     this.http.post(this.cartUrl, item).subscribe(() => {
       this.getCart().subscribe((cart) => {
         this.cartSubject.next(cart.length); // Notify subscribers
-        this.updateCartTotal();
         this.toastrService.success(`Added to cart`, 'Cart updated');
       });
     });
   }
 
-  updateCart(item: CartModel): Observable<CartModel[]> {
+  updateCart(item: CartModel): Observable<void> {
     return this.http.put<void>(`${this.cartUrl}`, item).pipe(
-      switchMap(() =>
-        this.getCart().pipe(
-          tap((cart) => {
-            this.cartSubject.next(cart.length); // Notify subscribers
-            this.toastrService.success(`Updated quantity`, 'Cart updated');
-          })
-        )
-      )
+      tap(() => {
+        this.getCart().subscribe((cart) => {
+          this.cartSubject.next(cart.length); // Notify subscribers
+          this.toastrService.success(`Updated quantity`, 'Cart updated');
+        });
+      })
     );
   }
 
-  updateCartTotal() {
+  updateCartTotal(cart: CartModel[]): void {
     let totalAmount = 0;
-    this.getCart().subscribe((data) => {
-      data.forEach((cartItem) => {
-        const product = this.products.find(
-          (product) => +product.productId === +cartItem.productId
-        );
 
-        if (product) {
-          totalAmount += product.price * cartItem.quantity;
-        }
-      });
-      this.cartTotalSubject.next(totalAmount);
+    cart.forEach((cartItem) => {
+      const product = this.products.find(
+        (product) => +product.productId === +cartItem.productId
+      );
+
+      if (product) {
+        totalAmount += product.price * cartItem.quantity;
+      }
     });
+
+    this.cartTotalSubject.next(totalAmount);
   }
 }

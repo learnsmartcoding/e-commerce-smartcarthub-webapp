@@ -15,17 +15,22 @@ export class ProductDetailsComponent implements OnInit {
   selectedImageUrl!: string;
   selectedImageType!: string;
   categories = categories;
-
+  initialLoad=true;
   constructor(
     private productService: ProductService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {}
 
   ngOnInit(): void {
     // Extract the productId from the route parameter
-    const id = this.route.snapshot.paramMap.get('productId') ?? 0;
-    this.productId = +id;
-    this.getProduct();
+    // const id = this.route.snapshot.paramMap.get('productId') ?? 0;
+    // this.productId = +id;
+    // this.getProduct();
+
+    this.route.data.subscribe(({ profileInfo }) => {
+      // do something with your resolved data ...
+      this.product = profileInfo;      
+    });
 
     this.route.paramMap.subscribe((params) => {
       const productId = params.get('productId') ?? 0;

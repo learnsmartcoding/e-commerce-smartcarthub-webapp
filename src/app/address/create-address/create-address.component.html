@@ -1,0 +1,50 @@
+<div class="contact-form spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact__form__title">
+                    <h2>Create an Address</h2>
+                </div>
+            </div>
+        </div>
+        <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <input type="text" id="street" 
+                    formControlName="street" placeholder="Enter street address" maxlength="255" class="form-control">
+                    <div *ngIf="isInvalid('street')" class="text-danger">
+                        <div *ngIf="addressForm.get('street')?.errors">Street is required</div>                        
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <input type="text" formControlName="city" placeholder="Enter City" maxlength="50" class="form-control">
+                    <div *ngIf="isInvalid('city')" class="text-danger">
+                        <div *ngIf="addressForm.get('city')?.errors">City is required</div>                        
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <input type="text" id="state" formControlName="state" maxlength="50" placeholder="Enter State" class="form-control">
+                    <div *ngIf="isInvalid('state')" class="text-danger">
+                        <div *ngIf="addressForm.get('state')?.errors">State is required</div>                        
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <input type="text" formControlName="zipCode" maxlength="20" placeholder="Enter ZipCode" class="form-control">
+                    <div *ngIf="isInvalid('zipCode')" class="text-danger">                        
+                        <div *ngIf="addressForm.get('zipCode')?.errors">Invalid ZipCode format</div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2">
+                    <label for="isShippingAddress">Is Shipping Address?</label>
+                    <select id="isShippingAddress" formControlName="isShippingAddress" class="form-control">
+                        <option value="true">Yes</option>
+                        <option selected value="false">No</option>
+                    </select>
+                </div>
+                <div class="col-lg-12 text-center">
+                    <button type="submit" [disabled]="!addressForm.valid" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -22,11 +22,14 @@ import { Idle, DEFAULT_INTERRUPTSOURCES } from '@ng-idle/core';
 import { Keepalive } from '@ng-idle/keepalive';
 import { ToastrService } from 'ngx-toastr';
 import { Subject, filter, takeUntil } from 'rxjs';
-import { LoginService } from './services/login.service';
+import { AuthService } from './services/auth.service';
 import { b2cPolicies } from './auth-config';
 import { Claim } from './models/claim';
-import { UserProfileModel, UserProfileService } from './services/user-profile.service';
+import { UserProfileService } from './services/user-profile.service';
 import { OrderService } from './services/order.service';
+import { Title } from '@angular/platform-browser';
+import { Router, NavigationEnd } from '@angular/router';
+import { SpinnerService } from './services/spinner.service';
 
 type IdTokenClaimsWithPolicyId = IdTokenClaims & {
   acr?: string;
@@ -52,6 +55,7 @@ export class AppComponent {
 
   // add parameters for Idle and Keepalive (if using) so Angular will inject them from the module
   constructor(
+    public spinnerService: SpinnerService,
     private idle: Idle,
     keepalive: Keepalive,
     cd: ChangeDetectorRef,
@@ -59,9 +63,8 @@ export class AppComponent {
     @Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration,
     private authService: MsalService,
     private msalBroadcastService: MsalBroadcastService,
-    private loginService: LoginService,
-    private userProfileService:UserProfileService,
-    private orderService: OrderService
+    private loginService: AuthService,
+    private router: Router, private titleService: Title
   ) {
     // set idle parameters
     idle.setIdle(60); // how long can they be inactive before considered idle, in seconds
@@ -105,10 +108,18 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.updateTitle(event.url);
+      }
+    });
+
+    //this.handleLoginSuccess(); //this stores the redirecturl and handles it
+
     // right when the component initializes, start reset state and start watching
     this.reset();
-    //this.getProfile();
-    //this.getOrders();
+ 
     this.isIframe = window !== window.parent && !window.opener;
     this.setLoginDisplay();
 
@@ -332,10 +343,82 @@ export class AppComponent {
     this._destroying$.complete();
   }
 
-  getProfile(){
-    this.userProfileService.GetUserProfile().subscribe(s=>alert());
+  private updateTitle(url: string) {
+    const defaultTitle='SmartCartHub Shopping Site | LearnSmartCoding';
+    const lsc='| LearnSmartCoding'
+    //this.toastrService.info(url,'URL');
+    let pageTitle: string;
+
+    switch (url) {
+      case '/home':
+        pageTitle = `Home ${lsc}`;
+        break;
+      case '/contact':
+        pageTitle = `Contact ${lsc}`;
+        break;
+      case '/product/shop':
+        pageTitle = `Browse Products ${lsc}`;
+        break;
+      case '/shopping':
+        pageTitle = `Shopping ${lsc}`;
+        break;
+      case '/user/address/list' || '/user/address':
+        pageTitle = `Address List ${lsc}`;
+        break;
+      case '/user/address/create':
+        pageTitle = `Create Address ${lsc}`;
+        break;
+      case '/user/address/edit/:id':
+        pageTitle = `Edit Address ${lsc}`;
+        break;
+      case '/admin/action':
+        pageTitle = `Admin Action ${lsc}`;
+        break;
+      case '/admin/manage/products':
+        pageTitle = `Manage Products ${lsc}`;
+        break;
+      case '/admin/manage/product/create':
+        pageTitle = `Add Product ${lsc}`;
+        break;
+      case '/admin/manage/product/edit/:productId':
+        pageTitle = `Edit Product ${lsc}`;
+        break;
+      case '/shopping/shop':
+        pageTitle = `Shop ${lsc}`;
+        break;
+      case '/shopping/search':
+        pageTitle = `Search ${lsc}`;
+        break;
+      case '/detail/:productId':
+        pageTitle = `Product Details ${lsc}`;
+        break;
+      case '/shopping/cart':
+        pageTitle = `Cart ${lsc}`;
+        break;
+      case '/shopping/wishlist':
+        pageTitle = `Wishlist ${lsc}`;
+        break;
+      case '/shopping/checkout':
+        pageTitle = `Checkout ${lsc}`;
+        break;
+      // Add more cases for other routes as needed
+      default:
+        pageTitle = defaultTitle;
+    }
+
+    this.titleService.setTitle(pageTitle);
   }
-  getOrders(){
-    this.orderService.GetOrders().subscribe(data=>console.log(JSON.stringify(data)));
+
+   // After successful login, navigate to the stored route
+   handleLoginSuccess() {
+    
+    const redirectUrl = sessionStorage.getItem('redirectUrl');
+    if (redirectUrl) {
+      this.router.navigateByUrl(redirectUrl);
+      sessionStorage.removeItem('redirectUrl'); // Remove the stored route after redirection
+    } else {
+      // Redirect to default route after login if no route was stored
+      this.router.navigate(['/']);
+    }
   }
 }

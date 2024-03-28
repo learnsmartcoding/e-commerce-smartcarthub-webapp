@@ -39,6 +39,7 @@ import {
 import { msalConfig, loginRequest } from './auth-config';
 import { MSALInterceptorConfigFactory } from './interceptor-config';
 import { ClaimsComponent } from './components/claims/claims.component';
+import { HttpInterceptorService } from './services/spinner-interceptor.service';
 
 /**
  * Here we pass the configuration parameters to create an MSAL instance.
@@ -91,6 +92,11 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
     }),
   ],
   providers: [    
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: MsalInterceptor,
