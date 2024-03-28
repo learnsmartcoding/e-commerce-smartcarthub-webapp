@@ -27,6 +27,8 @@ import { b2cPolicies } from './auth-config';
 import { Claim } from './models/claim';
 import { UserProfileModel, UserProfileService } from './services/user-profile.service';
 import { OrderService } from './services/order.service';
+import { Title } from '@angular/platform-browser';
+import { Router, NavigationEnd } from '@angular/router';
 
 type IdTokenClaimsWithPolicyId = IdTokenClaims & {
   acr?: string;
@@ -61,7 +63,8 @@ export class AppComponent {
     private msalBroadcastService: MsalBroadcastService,
     private loginService: LoginService,
     private userProfileService:UserProfileService,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private router: Router, private titleService: Title
   ) {
     // set idle parameters
     idle.setIdle(60); // how long can they be inactive before considered idle, in seconds
@@ -105,10 +108,17 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.updateTitle(event.url);
+      }
+    });
+
     // right when the component initializes, start reset state and start watching
     this.reset();
-    //this.getProfile();
-    //this.getOrders();
+    this.getProfile();
+    this.getOrders();
     this.isIframe = window !== window.parent && !window.opener;
     this.setLoginDisplay();
 
@@ -333,9 +343,75 @@ export class AppComponent {
   }
 
   getProfile(){
-    this.userProfileService.GetUserProfile().subscribe(s=>alert());
+    this.userProfileService.GetUserProfile().subscribe(s=>console.log(JSON.stringify(s)));
   }
   getOrders(){
     this.orderService.GetOrders().subscribe(data=>console.log(JSON.stringify(data)));
+  }
+
+  private updateTitle(url: string) {
+    const defaultTitle='SmartCartHub Shopping Site | LearnSmartCoding';
+    const lsc='| LearnSmartCoding'
+    //this.toastrService.info(url,'URL');
+    let pageTitle: string;
+
+    switch (url) {
+      case '/home':
+        pageTitle = `Home ${lsc}`;
+        break;
+      case '/contact':
+        pageTitle = `Contact ${lsc}`;
+        break;
+      case '/product/shop':
+        pageTitle = `Browse Products ${lsc}`;
+        break;
+      case '/shopping':
+        pageTitle = `Shopping ${lsc}`;
+        break;
+      case '/user/address/list' || '/user/address':
+        pageTitle = `Address List ${lsc}`;
+        break;
+      case '/user/address/create':
+        pageTitle = `Create Address ${lsc}`;
+        break;
+      case '/user/address/edit/:id':
+        pageTitle = `Edit Address ${lsc}`;
+        break;
+      case '/admin/action':
+        pageTitle = `Admin Action ${lsc}`;
+        break;
+      case '/admin/manage/products':
+        pageTitle = `Manage Products ${lsc}`;
+        break;
+      case '/admin/manage/product/create':
+        pageTitle = `Add Product ${lsc}`;
+        break;
+      case '/admin/manage/product/edit/:productId':
+        pageTitle = `Edit Product ${lsc}`;
+        break;
+      case '/shopping/shop':
+        pageTitle = `Shop ${lsc}`;
+        break;
+      case '/shopping/search':
+        pageTitle = `Search ${lsc}`;
+        break;
+      case '/detail/:productId':
+        pageTitle = `Product Details ${lsc}`;
+        break;
+      case '/shopping/cart':
+        pageTitle = `Cart ${lsc}`;
+        break;
+      case '/shopping/wishlist':
+        pageTitle = `Wishlist ${lsc}`;
+        break;
+      case '/shopping/checkout':
+        pageTitle = `Checkout ${lsc}`;
+        break;
+      // Add more cases for other routes as needed
+      default:
+        pageTitle = defaultTitle;
+    }
+
+    this.titleService.setTitle(pageTitle);
   }
 }

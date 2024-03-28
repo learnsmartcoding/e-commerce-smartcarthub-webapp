@@ -30,6 +30,7 @@ import { b2cPolicies } from 'src/app/auth-config';
 import { LoginService } from 'src/app/services/login.service';
 import { Claim } from 'src/app/models/claim';
 import { ToastrService } from 'ngx-toastr';
+import { appConstants } from 'src/app/shared/constants/data.model';
 type IdTokenClaimsWithPolicyId = IdTokenClaims & {
   acr?: string;
   tfp?: string;
@@ -49,6 +50,7 @@ export class HeaderComponent implements OnChanges {
   claims: Claim[] = [];
 
   private readonly _destroying$ = new Subject<void>();
+  contactEmail = appConstants.contactEmailId;
 
   constructor(
     private cartService: CartService,
@@ -71,7 +73,7 @@ export class HeaderComponent implements OnChanges {
 
   ngOnInit(): void {
     this.cartItems$ = this.cartService.cart$;
-    this.cartTotal$ =this.cartService.cartTotal$;
+    this.cartTotal$ = this.cartService.cartTotal$;
 
     this.isIframe = window !== window.parent && !window.opener;
     this.setLoginDisplay();

@@ -6,7 +6,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="header__top__left">
                         <ul>
-                            <li><i class="fa fa-envelope"></i> learnsmartcoding@gmail.com</li>
+                            <li><i class="fa fa-envelope"></i>{{contactEmail}}</li>
                             <!-- <li>Free Shipping for all Order of $99</li> -->
                             <li *ngIf="timeoutSeconds>1 && timeoutSeconds<60 ">Your session will timeout in
                                 {{timeoutSeconds}} seconds</li>
@@ -52,18 +52,31 @@
                 <nav class="header__menu">
                     <ul>
                         <li class="active"><a [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
-                        </li>
-                        <li><a [routerLink]="['/product/shop']" routerLinkActive="router-link-active">Shop</a></li>
+                        </li>                        
                         <li><a>Shopping</a>
                             <ul class="header__menu__dropdown">
                                 <!-- <li><a [routerLink]="['/product/details/2']" routerLinkActive="router-link-active" >Shop Details</a></li> -->
+                                <li><a [routerLink]="['/product/shop']" routerLinkActive="router-link-active">Shop</a></li>
                                 <li><a [routerLink]="['/shopping/cart']" routerLinkActive="router-link-active">Shoping
                                         Cart</a></li>
                                 <li><a [routerLink]="['/shopping/wishlist']"
                                         routerLinkActive="router-link-active">Wishlist</a></li>
                                 <li><a [routerLink]="['/shopping/checkout']"
-                                        routerLinkActive="router-link-active">Checkout</a></li>
-                                <!-- <li><a href="./blog-details.html">Blog Details</a></li> -->
+                                        routerLinkActive="router-link-active">Checkout</a></li>                                
+                            </ul>
+                        </li>
+                        <li><a>Address</a>
+                            <ul class="header__menu__dropdown">                                
+                                <li><a [routerLink]="['/user/address/list']" routerLinkActive="router-link-active">Manage Address</a></li>
+                            </ul>
+                        </li>
+                        <li><a>Manage</a>
+                            <ul class="header__menu__dropdown">                                
+                                <li><a [routerLink]="['/admin/action']" routerLinkActive="router-link-active">Actions Menu</a></li>
+                                <li><a [routerLink]="['/admin/manage/products']"
+                                        routerLinkActive="router-link-active">Manage Products</a></li>
+                                <li><a [routerLink]="['/admin/manage/product/create']"
+                                        routerLinkActive="router-link-active">Add Product</a></li>                                
                             </ul>
                         </li>
                         <!-- <li><a href="./blog.html">Blog</a></li> -->

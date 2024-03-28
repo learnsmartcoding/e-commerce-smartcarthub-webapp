@@ -1,6 +1,9 @@
 import { ProductCategory } from 'src/app/models/category.model';
 import { ProductModel } from 'src/app/models/product.model';
 
+export const appConstants ={
+  contactEmailId:'learnsmartcoding@gmail.com'
+};
 // export const categories = [
 //     { categoryId: 1, categoryName: 'Electronics' },
 //     { categoryId: 2, categoryName: 'Clothing' },
